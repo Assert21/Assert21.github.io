@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>攻防世界WEB新手区攻略 - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="#1.view source    1. 用F12或CTRL+U可打开网页源代码#2. robots：robots协议：    &amp;gt;1. 君子协定，用于规定搜索引擎或爬虫嗅探信息时可见或不可见的,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://assert21.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">攻防世界WEB新手区攻略</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">攻防世界WEB新手区攻略</h1>
+        <div class="stuff">
+            <span>九月 17, 2021</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/WEB/" rel="tag">-WEB</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p>#1.view source<br>    1. 用F12或CTRL+U可打开网页源代码<br>#2. robots：<br>robots协议：<br>    &gt;1. 君子协定，用于规定搜索引擎或爬虫嗅探信息时可见或不可见的内容范围<br>    &gt;2. robots协议可被违反，爬虫可强行读取robots规定的不可见内容<br>    &gt;3. 于URL尾端加\robots.txt可查看该网页robots协议（如果有）<br>#3. 备份文件：<br>1.常见后缀有git，svn，swp，~，bak，bash_history<br>2.于URL尾端加\备份文件全名可下载该备份文件，通过记事本打开可见代码内容<br>3. GitHub上的脚本dirsearch可扫描备份文件<br>#4.cookie：<br>1.cookie用于在会话（Session）中跟踪用户本地端的数据，辨别用户身份使用<br>2.一般习惯于用复数形式cookies<br>3.通过burp抓包可获得cookie<br>4.于URL尾端加\cookie.php可见cookie内容<br>#5.disabled：<br>1.disabled=””字段可禁用某一功能（或按键）<br>2.在删去disabled后该禁用失效<br>3.可用hackbar传输 post实现某一被禁用功能<br>#6.weak auth(弱密码）：<br>1.设置有弱密码的网站可通过字典进行爆破<br>2.burp抓包获取基本内容和网页代码<br>3.随意测试密码得到相关信息<br>4.burp中proxy下抓包<br>5.导入Intruder下并导入字典作为payload<br>6.利用字典进行密码或用户名等定向爆破<br>7.此为穷举法<br>#7. simple PHP：<br>1.PHP的基本语言内容<br>2.===为比较是否相等（同时比较类型和 ），==为弱比较（均转换为数字整形后再比较）<br>3.在URL后缀加入PHP文件后缀名以更改PHP<br>4.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">is_numeric()</span><br></pre></td></tr></table></figure>
+<p>用于检测变量类型是否为数字或数字字符串<br>5.PHP文件后缀名后加？<br>#8.get_post<br>1.本题考查http常用的两种请求方式，即get和post<br>    &gt;1.get：向指定资源请求数据<br>    &gt;2.post：向指定资源提供要被处理的数据<br>2.通过火狐浏览器安装所需的工具hackbar<br>3.进入网页，在网址的尾部加上/?a=1进行一个a=1的get式提交<br>4.按F12打开工具栏，选择hackbar，勾选post data<br>5. 上方框中填入网页地址，下方填入b=2<br>6.单击execute获得flag<br>#9.xff_referer<br>1.本题考查伪造X-Forwarded-For和Referer<br>    &gt;1.X-Forwarded-For:用于标注用户身份<br>    &gt;2.Referer:用于标注用户从哪一网页跳转来<br>2.打开burpsuite，在proxy下进行抓包，http history下将所抓到的包右键选择发送到repeater<br>3.在repeater中Host行下新建一行<br>4.输入<br>    <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">X-Forward-For: 123.123.123.123</span><br></pre></td></tr></table></figure><br>5.点击send得到反馈<br>6.在xff行下新建一行<br>7.输入<br>    <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Referer:https://www.google.com</span><br></pre></td></tr></table></figure><br>8. 点击send在反馈中得到flag<br>#10.webshell<br>1.此题考查的为一句话病毒<br>2.下载并安装蚁剑（可在GitHub找到）<br>3.将网址复制到蚁剑得到flag<br>#11.command_execution<br>1.输入<br>    <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1 | find / -name &quot;flag.txt&quot;</span><br></pre></td></tr></table></figure><br>    查找flag的位置<br>2.输入<br>    <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1 | cat /home/flag.txt</span><br></pre></td></tr></table></figure><br>    获得flag文件<br>3.另一种方法：<br>    &gt;1.输入<br>    <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1 &amp;&amp; ls</span><br></pre></td></tr></table></figure><br>    查看一级目录文件<br>    &gt;2.输入<br>    <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1 &amp;&amp; ls../</span><br></pre></td></tr></table></figure><br>    查看二级文件<br>    &gt;3.<br>    <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输入127.0.0.1 &amp;&amp; ls../../</span><br></pre></td></tr></table></figure><br>    查看三级文件<br>    &gt;4.以此类推直到找到flag相关文件<br>    &gt;5.用cat代码获取flag<br>#12.simple_js</p>
+<ol>
+<li>F12打开网页代码</li>
+<li>发现代码中有\x35……形式的代码</li>
+<li>base16转码得到十进制代码</li>
+<li>将十进制代码转为ASCII码得到flag<br><img src="https://i.loli.net/2021/09/17/tG7oXNabTlmygFM.png" alt="赛马娘1.png"></li>
+</ol>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='https://link.hhtjim.com/163/557579321.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
