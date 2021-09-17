@@ -11,8 +11,7 @@
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Fechin,"> 
     <meta name="description" content="Hexo X GitHub  联动确认！
-1、安装必要的插件## 1、git插件  https://www.git-scm.com/download/
-## 2、node.js插件  https:/,"> 
+1、安装必要的插件1、git插件  https://www.git-scm.com/download/2、node.js插件  https://nodejs,"> 
     <meta name="author" content="John Doe"> 
     <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -55,90 +54,13 @@
         </div>
         <div class="content markdown">
             <p>Hexo X GitHub  联动确认！</p>
-<h1 id="1、安装必要的插件"><a href="#1、安装必要的插件" class="headerlink" title="1、安装必要的插件"></a>1、安装必要的插件</h1><pre><code>## 1、git插件  https://www.git-scm.com/download/
-## 2、node.js插件  https://nodejs.org/en/
-## 3、npm插件  包含在node.js插件中
-## 4、检测三种插件是否已成功安装：
-    ### 1、win+R输入cmd并运行打开命令符窗口
-    ### 2、输入：
-        ####1、git --version
-        ####2、node -v
-        ####3、npm -v
-    ### 3、若均出现版本号则已安装成功
-</code></pre>
-<h1 id="2、搭建GitHub仓库"><a href="#2、搭建GitHub仓库" class="headerlink" title="2、搭建GitHub仓库"></a>2、搭建GitHub仓库</h1><pre><code>## 1、注册并登录GitHub后，点击个人头像旁的下三角，下拉菜单中选择Your repositories
-## 2、点击绿色的new创建属于自己的仓库
-## 3、在创建页面的Repository name栏中输入形同&lt;username&gt;.github.io，其余均非必填项
-## 4、点击Create repository创建仓库
-## 5、注意事项：repository name务必为&lt;username&gt;.github.io 关系到后期hexo导入
-</code></pre>
-<h1 id="3、配置ssh密钥"><a href="#3、配置ssh密钥" class="headerlink" title="3、配置ssh密钥"></a>3、配置ssh密钥</h1><pre><code>## 1、原因：每次向GitHub提交代码都需要经过你的账号验证，在未配置ssh密钥的情况下，需要
-## 每次都输入邮箱和密码，极为繁琐，配置ssh密钥能快速自动通过这一过程，加速代码更新
-## 2、查看本机中是否已经存在密钥：
-    ### cd ~/.ssh   #此命令在命令符窗口中运行
-## 3、如果显示No such file则需要重新生成：
-    ### ssh-keygen -t rsa -C &quot;邮箱地址&quot;
-## 邮箱地址应为你的GitHub邮箱地址即&lt;username&gt;.github.io，随后ssh key将保存在C盘用户
-## 目录的.ssh文件夹中，路径大致为C:\Users\&lt;你的电脑用户名&gt;\.ssh
-## 4、右键.ssh文件夹中的id_rsa.pub文件，在打开方式中选择用记事本打开，Ctrl+A全选内容，
-## Ctrl+C复制全部内容
-## 5、在GitHub中点击右上角的头像，下拉菜单中选择Setting，在左侧菜单中选择SSH and GPG keys
-## 在顶部右侧选择绿色的New SSH key来新建ssh密钥
-## 6、随便起个title，在下方Ctrl+V粘贴你的ssh密钥
-## 7、点击Add SSH key完成对ssh密钥的添加
-</code></pre>
-<h1 id="4、测试ssh密钥与GitHub绑定是否成功："><a href="#4、测试ssh密钥与GitHub绑定是否成功：" class="headerlink" title="4、测试ssh密钥与GitHub绑定是否成功："></a>4、测试ssh密钥与GitHub绑定是否成功：</h1><pre><code>## 打开命令符窗口，在其中输入：
-    ### ssh -T git@github.com
-## 若是显示Hi！……You have successfully…… 则已成功
-</code></pre>
-<h1 id="5、绑定你的git和GitHub"><a href="#5、绑定你的git和GitHub" class="headerlink" title="5、绑定你的git和GitHub"></a>5、绑定你的git和GitHub</h1><pre><code>## 1、双击图标打开git bash
-## 2、在窗口中输入：
-    ### git config --global user.name &quot;.....&quot;
-    ### git config --global user.email &quot;...@....&quot;   #其中的...都为你自己的用户名和邮箱
-</code></pre>
-<h1 id="6、配置你的hexo"><a href="#6、配置你的hexo" class="headerlink" title="6、配置你的hexo"></a>6、配置你的hexo</h1><pre><code>## 1、安装hexo：
-    ### 1、打开git bash
-    ### 2、输入：npm install -g hexo
-## 2、建立一个新文件夹作为博客文件存放处
-## 3、右键该文件夹，选择git bash并输入：
-    ### hexo init  #此步为初始化hexo博客文件夹
-## 4、博客文件夹初始化成功，其中应包含有：
-    ### node_modules
-    ### scaffolds
-    ### source  #资源文件夹，内含有一个_posts文件夹，内含.md格式的博客文件
-    ### themes  #主题文件夹，用于存放各种主题，默认主题为landscape
-    ### .gitignore
-    ### _config.yml  #接下来要编辑的配置文件
-    ### db.json
-    ### ……
-</code></pre>
-<h1 id="7、测试本地化启动博客："><a href="#7、测试本地化启动博客：" class="headerlink" title="7、测试本地化启动博客："></a>7、测试本地化启动博客：</h1><pre><code>## 1、右键博客文件夹，选择git bash
-## 2、在其中输入：
-    ### hexo g #用于将source/_posts/xxx.md这一博客文件生成到自己的本地博客
-    ### hexo d #用于启动本地博客服务器来访问博客，一旦关机或停止博客就无法访问
-## 3、在浏览器中输入http://localhost:4000来访问本地博客
-</code></pre>
-<h1 id="8、联动hexo与GitHub"><a href="#8、联动hexo与GitHub" class="headerlink" title="8、联动hexo与GitHub"></a>8、联动hexo与GitHub</h1><pre><code>## 1、进入博客文件夹，右键config.yml文件，用记事本打开
-## 2、拉至最底部，将其最后的代码修改为：
-    ### deploy:
+<h1 id="1、安装必要的插件"><a href="#1、安装必要的插件" class="headerlink" title="1、安装必要的插件"></a>1、安装必要的插件</h1><h2 id="1、git插件-https-www-git-scm-com-download"><a href="#1、git插件-https-www-git-scm-com-download" class="headerlink" title="1、git插件  https://www.git-scm.com/download/"></a>1、git插件  <a target="_blank" rel="noopener" href="https://www.git-scm.com/download/">https://www.git-scm.com/download/</a></h2><h2 id="2、node-js插件-https-nodejs-org-en"><a href="#2、node-js插件-https-nodejs-org-en" class="headerlink" title="2、node.js插件  https://nodejs.org/en/"></a>2、node.js插件  <a target="_blank" rel="noopener" href="https://nodejs.org/en/">https://nodejs.org/en/</a></h2><h2 id="3、npm插件-包含在node-js插件中"><a href="#3、npm插件-包含在node-js插件中" class="headerlink" title="3、npm插件  包含在node.js插件中"></a>3、npm插件  包含在node.js插件中</h2><h2 id="4、检测三种插件是否已成功安装："><a href="#4、检测三种插件是否已成功安装：" class="headerlink" title="4、检测三种插件是否已成功安装："></a>4、检测三种插件是否已成功安装：</h2><h3 id="1、win-R输入cmd并运行打开命令符窗口"><a href="#1、win-R输入cmd并运行打开命令符窗口" class="headerlink" title="1、win+R输入cmd并运行打开命令符窗口"></a>1、win+R输入cmd并运行打开命令符窗口</h3><h3 id="2、输入："><a href="#2、输入：" class="headerlink" title="2、输入："></a>2、输入：</h3><p>####1、git –version<br>####2、node -v<br>####3、npm -v</p>
+<h3 id="3、若均出现版本号则已安装成功"><a href="#3、若均出现版本号则已安装成功" class="headerlink" title="3、若均出现版本号则已安装成功"></a>3、若均出现版本号则已安装成功</h3><h1 id="2、搭建GitHub仓库"><a href="#2、搭建GitHub仓库" class="headerlink" title="2、搭建GitHub仓库"></a>2、搭建GitHub仓库</h1><h2 id="1、注册并登录GitHub后，点击个人头像旁的下三角，下拉菜单中选择Your-repositories"><a href="#1、注册并登录GitHub后，点击个人头像旁的下三角，下拉菜单中选择Your-repositories" class="headerlink" title="1、注册并登录GitHub后，点击个人头像旁的下三角，下拉菜单中选择Your repositories"></a>1、注册并登录GitHub后，点击个人头像旁的下三角，下拉菜单中选择Your repositories</h2><h2 id="2、点击绿色的new创建属于自己的仓库"><a href="#2、点击绿色的new创建属于自己的仓库" class="headerlink" title="2、点击绿色的new创建属于自己的仓库"></a>2、点击绿色的new创建属于自己的仓库</h2><h2 id="3、在创建页面的Repository-name栏中输入形同-github-io，其余均非必填项"><a href="#3、在创建页面的Repository-name栏中输入形同-github-io，其余均非必填项" class="headerlink" title="3、在创建页面的Repository name栏中输入形同.github.io，其余均非必填项"></a>3、在创建页面的Repository name栏中输入形同<username>.github.io，其余均非必填项</h2><h2 id="4、点击Create-repository创建仓库"><a href="#4、点击Create-repository创建仓库" class="headerlink" title="4、点击Create repository创建仓库"></a>4、点击Create repository创建仓库</h2><h2 id="5、注意事项：repository-name务必为-github-io-关系到后期hexo导入"><a href="#5、注意事项：repository-name务必为-github-io-关系到后期hexo导入" class="headerlink" title="5、注意事项：repository name务必为.github.io 关系到后期hexo导入"></a>5、注意事项：repository name务必为<username>.github.io 关系到后期hexo导入</h2><h1 id="3、配置ssh密钥"><a href="#3、配置ssh密钥" class="headerlink" title="3、配置ssh密钥"></a>3、配置ssh密钥</h1><h2 id="1、原因：每次向GitHub提交代码都需要经过你的账号验证，在未配置ssh密钥的情况下，需要"><a href="#1、原因：每次向GitHub提交代码都需要经过你的账号验证，在未配置ssh密钥的情况下，需要" class="headerlink" title="1、原因：每次向GitHub提交代码都需要经过你的账号验证，在未配置ssh密钥的情况下，需要"></a>1、原因：每次向GitHub提交代码都需要经过你的账号验证，在未配置ssh密钥的情况下，需要</h2><h2 id="每次都输入邮箱和密码，极为繁琐，配置ssh密钥能快速自动通过这一过程，加速代码更新"><a href="#每次都输入邮箱和密码，极为繁琐，配置ssh密钥能快速自动通过这一过程，加速代码更新" class="headerlink" title="每次都输入邮箱和密码，极为繁琐，配置ssh密钥能快速自动通过这一过程，加速代码更新"></a>每次都输入邮箱和密码，极为繁琐，配置ssh密钥能快速自动通过这一过程，加速代码更新</h2><h2 id="2、查看本机中是否已经存在密钥："><a href="#2、查看本机中是否已经存在密钥：" class="headerlink" title="2、查看本机中是否已经存在密钥："></a>2、查看本机中是否已经存在密钥：</h2><h3 id="cd-ssh-此命令在命令符窗口中运行"><a href="#cd-ssh-此命令在命令符窗口中运行" class="headerlink" title="cd ~/.ssh   #此命令在命令符窗口中运行"></a>cd ~/.ssh   #此命令在命令符窗口中运行</h3><h2 id="3、如果显示No-such-file则需要重新生成："><a href="#3、如果显示No-such-file则需要重新生成：" class="headerlink" title="3、如果显示No such file则需要重新生成："></a>3、如果显示No such file则需要重新生成：</h2><h3 id="ssh-keygen-t-rsa-C-“邮箱地址”"><a href="#ssh-keygen-t-rsa-C-“邮箱地址”" class="headerlink" title="ssh-keygen -t rsa -C “邮箱地址”"></a>ssh-keygen -t rsa -C “邮箱地址”</h3><h2 id="邮箱地址应为你的GitHub邮箱地址即-github-io，随后ssh-key将保存在C盘用户"><a href="#邮箱地址应为你的GitHub邮箱地址即-github-io，随后ssh-key将保存在C盘用户" class="headerlink" title="邮箱地址应为你的GitHub邮箱地址即.github.io，随后ssh key将保存在C盘用户"></a>邮箱地址应为你的GitHub邮箱地址即<username>.github.io，随后ssh key将保存在C盘用户</h2><h2 id="目录的-ssh文件夹中，路径大致为C-Users-lt-你的电脑用户名-gt-ssh"><a href="#目录的-ssh文件夹中，路径大致为C-Users-lt-你的电脑用户名-gt-ssh" class="headerlink" title="目录的.ssh文件夹中，路径大致为C:\Users&lt;你的电脑用户名&gt;.ssh"></a>目录的.ssh文件夹中，路径大致为C:\Users&lt;你的电脑用户名&gt;.ssh</h2><h2 id="4、右键-ssh文件夹中的id-rsa-pub文件，在打开方式中选择用记事本打开，Ctrl-A全选内容，"><a href="#4、右键-ssh文件夹中的id-rsa-pub文件，在打开方式中选择用记事本打开，Ctrl-A全选内容，" class="headerlink" title="4、右键.ssh文件夹中的id_rsa.pub文件，在打开方式中选择用记事本打开，Ctrl+A全选内容，"></a>4、右键.ssh文件夹中的id_rsa.pub文件，在打开方式中选择用记事本打开，Ctrl+A全选内容，</h2><h2 id="Ctrl-C复制全部内容"><a href="#Ctrl-C复制全部内容" class="headerlink" title="Ctrl+C复制全部内容"></a>Ctrl+C复制全部内容</h2><h2 id="5、在GitHub中点击右上角的头像，下拉菜单中选择Setting，在左侧菜单中选择SSH-and-GPG-keys"><a href="#5、在GitHub中点击右上角的头像，下拉菜单中选择Setting，在左侧菜单中选择SSH-and-GPG-keys" class="headerlink" title="5、在GitHub中点击右上角的头像，下拉菜单中选择Setting，在左侧菜单中选择SSH and GPG keys"></a>5、在GitHub中点击右上角的头像，下拉菜单中选择Setting，在左侧菜单中选择SSH and GPG keys</h2><h2 id="在顶部右侧选择绿色的New-SSH-key来新建ssh密钥"><a href="#在顶部右侧选择绿色的New-SSH-key来新建ssh密钥" class="headerlink" title="在顶部右侧选择绿色的New SSH key来新建ssh密钥"></a>在顶部右侧选择绿色的New SSH key来新建ssh密钥</h2><h2 id="6、随便起个title，在下方Ctrl-V粘贴你的ssh密钥"><a href="#6、随便起个title，在下方Ctrl-V粘贴你的ssh密钥" class="headerlink" title="6、随便起个title，在下方Ctrl+V粘贴你的ssh密钥"></a>6、随便起个title，在下方Ctrl+V粘贴你的ssh密钥</h2><h2 id="7、点击Add-SSH-key完成对ssh密钥的添加"><a href="#7、点击Add-SSH-key完成对ssh密钥的添加" class="headerlink" title="7、点击Add SSH key完成对ssh密钥的添加"></a>7、点击Add SSH key完成对ssh密钥的添加</h2><h1 id="4、测试ssh密钥与GitHub绑定是否成功："><a href="#4、测试ssh密钥与GitHub绑定是否成功：" class="headerlink" title="4、测试ssh密钥与GitHub绑定是否成功："></a>4、测试ssh密钥与GitHub绑定是否成功：</h1><h2 id="打开命令符窗口，在其中输入："><a href="#打开命令符窗口，在其中输入：" class="headerlink" title="打开命令符窗口，在其中输入："></a>打开命令符窗口，在其中输入：</h2><h3 id="ssh-T-x67-x69-116-x40-x67-105-116-104-117-98-x2e-x63-111-x6d"><a href="#ssh-T-x67-x69-116-x40-x67-105-116-104-117-98-x2e-x63-111-x6d" class="headerlink" title="ssh -T &#x67;&#x69;&#116;&#x40;&#x67;&#105;&#116;&#104;&#117;&#98;&#x2e;&#x63;&#111;&#x6d;"></a>ssh -T <a href="mailto:&#x67;&#x69;&#116;&#x40;&#x67;&#105;&#116;&#104;&#117;&#98;&#x2e;&#x63;&#111;&#x6d;">&#x67;&#x69;&#116;&#x40;&#x67;&#105;&#116;&#104;&#117;&#98;&#x2e;&#x63;&#111;&#x6d;</a></h3><h2 id="若是显示Hi！……You-have-successfully……-则已成功"><a href="#若是显示Hi！……You-have-successfully……-则已成功" class="headerlink" title="若是显示Hi！……You have successfully…… 则已成功"></a>若是显示Hi！……You have successfully…… 则已成功</h2><h1 id="5、绑定你的git和GitHub"><a href="#5、绑定你的git和GitHub" class="headerlink" title="5、绑定你的git和GitHub"></a>5、绑定你的git和GitHub</h1><h2 id="1、双击图标打开git-bash"><a href="#1、双击图标打开git-bash" class="headerlink" title="1、双击图标打开git bash"></a>1、双击图标打开git bash</h2><h2 id="2、在窗口中输入："><a href="#2、在窗口中输入：" class="headerlink" title="2、在窗口中输入："></a>2、在窗口中输入：</h2><h3 id="git-config-–global-user-name-“…-”"><a href="#git-config-–global-user-name-“…-”" class="headerlink" title="git config –global user.name “…..”"></a>git config –global user.name “…..”</h3><h3 id="git-config-–global-user-email-“-…-”-其中的…都为你自己的用户名和邮箱"><a href="#git-config-–global-user-email-“-…-”-其中的…都为你自己的用户名和邮箱" class="headerlink" title="git config –global user.email “...@….”   #其中的…都为你自己的用户名和邮箱"></a>git config –global user.email “...@….”   #其中的…都为你自己的用户名和邮箱</h3><h1 id="6、配置你的hexo"><a href="#6、配置你的hexo" class="headerlink" title="6、配置你的hexo"></a>6、配置你的hexo</h1><h2 id="1、安装hexo："><a href="#1、安装hexo：" class="headerlink" title="1、安装hexo："></a>1、安装hexo：</h2><h3 id="1、打开git-bash"><a href="#1、打开git-bash" class="headerlink" title="1、打开git bash"></a>1、打开git bash</h3><h3 id="2、输入：npm-install-g-hexo"><a href="#2、输入：npm-install-g-hexo" class="headerlink" title="2、输入：npm install -g hexo"></a>2、输入：npm install -g hexo</h3><h2 id="2、建立一个新文件夹作为博客文件存放处"><a href="#2、建立一个新文件夹作为博客文件存放处" class="headerlink" title="2、建立一个新文件夹作为博客文件存放处"></a>2、建立一个新文件夹作为博客文件存放处</h2><h2 id="3、右键该文件夹，选择git-bash并输入："><a href="#3、右键该文件夹，选择git-bash并输入：" class="headerlink" title="3、右键该文件夹，选择git bash并输入："></a>3、右键该文件夹，选择git bash并输入：</h2><h3 id="hexo-init-此步为初始化hexo博客文件夹"><a href="#hexo-init-此步为初始化hexo博客文件夹" class="headerlink" title="hexo init  #此步为初始化hexo博客文件夹"></a>hexo init  #此步为初始化hexo博客文件夹</h3><h2 id="4、博客文件夹初始化成功，其中应包含有："><a href="#4、博客文件夹初始化成功，其中应包含有：" class="headerlink" title="4、博客文件夹初始化成功，其中应包含有："></a>4、博客文件夹初始化成功，其中应包含有：</h2><h3 id="node-modules"><a href="#node-modules" class="headerlink" title="node_modules"></a>node_modules</h3><h3 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a>scaffolds</h3><h3 id="source-资源文件夹，内含有一个-posts文件夹，内含-md格式的博客文件"><a href="#source-资源文件夹，内含有一个-posts文件夹，内含-md格式的博客文件" class="headerlink" title="source  #资源文件夹，内含有一个_posts文件夹，内含.md格式的博客文件"></a>source  #资源文件夹，内含有一个_posts文件夹，内含.md格式的博客文件</h3><h3 id="themes-主题文件夹，用于存放各种主题，默认主题为landscape"><a href="#themes-主题文件夹，用于存放各种主题，默认主题为landscape" class="headerlink" title="themes  #主题文件夹，用于存放各种主题，默认主题为landscape"></a>themes  #主题文件夹，用于存放各种主题，默认主题为landscape</h3><h3 id="gitignore"><a href="#gitignore" class="headerlink" title=".gitignore"></a>.gitignore</h3><h3 id="config-yml-接下来要编辑的配置文件"><a href="#config-yml-接下来要编辑的配置文件" class="headerlink" title="_config.yml  #接下来要编辑的配置文件"></a>_config.yml  #接下来要编辑的配置文件</h3><h3 id="db-json"><a href="#db-json" class="headerlink" title="db.json"></a>db.json</h3><h3 id="……"><a href="#……" class="headerlink" title="……"></a>……</h3><h1 id="7、测试本地化启动博客："><a href="#7、测试本地化启动博客：" class="headerlink" title="7、测试本地化启动博客："></a>7、测试本地化启动博客：</h1><h2 id="1、右键博客文件夹，选择git-bash"><a href="#1、右键博客文件夹，选择git-bash" class="headerlink" title="1、右键博客文件夹，选择git bash"></a>1、右键博客文件夹，选择git bash</h2><h2 id="2、在其中输入："><a href="#2、在其中输入：" class="headerlink" title="2、在其中输入："></a>2、在其中输入：</h2><h3 id="hexo-g-用于将source-posts-xxx-md这一博客文件生成到自己的本地博客"><a href="#hexo-g-用于将source-posts-xxx-md这一博客文件生成到自己的本地博客" class="headerlink" title="hexo g #用于将source/_posts/xxx.md这一博客文件生成到自己的本地博客"></a>hexo g #用于将source/_posts/xxx.md这一博客文件生成到自己的本地博客</h3><h3 id="hexo-d-用于启动本地博客服务器来访问博客，一旦关机或停止博客就无法访问"><a href="#hexo-d-用于启动本地博客服务器来访问博客，一旦关机或停止博客就无法访问" class="headerlink" title="hexo d #用于启动本地博客服务器来访问博客，一旦关机或停止博客就无法访问"></a>hexo d #用于启动本地博客服务器来访问博客，一旦关机或停止博客就无法访问</h3><h2 id="3、在浏览器中输入http-localhost-4000来访问本地博客"><a href="#3、在浏览器中输入http-localhost-4000来访问本地博客" class="headerlink" title="3、在浏览器中输入http://localhost:4000来访问本地博客"></a>3、在浏览器中输入<a href="http://localhost:4000来访问本地博客">http://localhost:4000来访问本地博客</a></h2><h1 id="8、联动hexo与GitHub"><a href="#8、联动hexo与GitHub" class="headerlink" title="8、联动hexo与GitHub"></a>8、联动hexo与GitHub</h1><h2 id="1、进入博客文件夹，右键config-yml文件，用记事本打开"><a href="#1、进入博客文件夹，右键config-yml文件，用记事本打开" class="headerlink" title="1、进入博客文件夹，右键config.yml文件，用记事本打开"></a>1、进入博客文件夹，右键config.yml文件，用记事本打开</h2><h2 id="2、拉至最底部，将其最后的代码修改为："><a href="#2、拉至最底部，将其最后的代码修改为：" class="headerlink" title="2、拉至最底部，将其最后的代码修改为："></a>2、拉至最底部，将其最后的代码修改为：</h2><pre><code>    ### deploy:
         ### type: git
         ### repository: git@github.com:&lt;username&gt;/&lt;username&gt;.github.io.git
         ### branch: &lt;...&gt; #此处填的内容为你GitHub仓库里branch左侧显示的文字
-        ### 通常为main或master
-    ### &lt;username&gt;即此处填的为你的GitHub用户名
-## 3、Ctrl+S保存文件
-## 4、右键博客文件夹，选择git bash
-## 5、输入：
-    ### hexo cl  #清除博客缓存
-    ### hexo g  
-    ### hexo d #将本地博客的文件上传至GitHub
 </code></pre>
-<h1 id="9、完成与debug"><a href="#9、完成与debug" class="headerlink" title="9、完成与debug"></a>9、完成与debug</h1><pre><code>## 1、打开http://&lt;username&gt;.github.io访问你自己的博客
-## 2、若第8步的5中代码出现报错，请检查代码是否正确及空格是否正确
-## 3、若短期内GitHub博客未成功更新，请通过shift+F5刷新浏览器缓存
-## 4、完成后就可以考虑对自己的博客进行精装修了（指更换主题）
-</code></pre>
-<p><img src="https://i.loli.net/2021/09/17/LoIqbAPEOlcztev.jpg" alt="3c1a9546924ac371.jpg"></p>
+<h3 id="通常为main或master"><a href="#通常为main或master" class="headerlink" title="通常为main或master"></a>通常为main或master</h3><h3 id="即此处填的为你的GitHub用户名"><a href="#即此处填的为你的GitHub用户名" class="headerlink" title="即此处填的为你的GitHub用户名"></a><username>即此处填的为你的GitHub用户名</h3><h2 id="3、Ctrl-S保存文件"><a href="#3、Ctrl-S保存文件" class="headerlink" title="3、Ctrl+S保存文件"></a>3、Ctrl+S保存文件</h2><h2 id="4、右键博客文件夹，选择git-bash"><a href="#4、右键博客文件夹，选择git-bash" class="headerlink" title="4、右键博客文件夹，选择git bash"></a>4、右键博客文件夹，选择git bash</h2><h2 id="5、输入："><a href="#5、输入：" class="headerlink" title="5、输入："></a>5、输入：</h2><h3 id="hexo-cl-清除博客缓存"><a href="#hexo-cl-清除博客缓存" class="headerlink" title="hexo cl  #清除博客缓存"></a>hexo cl  #清除博客缓存</h3><h3 id="hexo-g"><a href="#hexo-g" class="headerlink" title="hexo g"></a>hexo g</h3><h3 id="hexo-d-将本地博客的文件上传至GitHub"><a href="#hexo-d-将本地博客的文件上传至GitHub" class="headerlink" title="hexo d #将本地博客的文件上传至GitHub"></a>hexo d #将本地博客的文件上传至GitHub</h3><h1 id="9、完成与debug"><a href="#9、完成与debug" class="headerlink" title="9、完成与debug"></a>9、完成与debug</h1><h2 id="1、打开http-github-io访问你自己的博客"><a href="#1、打开http-github-io访问你自己的博客" class="headerlink" title="1、打开http://.github.io访问你自己的博客"></a>1、打开http://<username>.github.io访问你自己的博客</h2><h2 id="2、若第8步的5中代码出现报错，请检查代码是否正确及空格是否正确"><a href="#2、若第8步的5中代码出现报错，请检查代码是否正确及空格是否正确" class="headerlink" title="2、若第8步的5中代码出现报错，请检查代码是否正确及空格是否正确"></a>2、若第8步的5中代码出现报错，请检查代码是否正确及空格是否正确</h2><h2 id="3、若短期内GitHub博客未成功更新，请通过shift-F5刷新浏览器缓存"><a href="#3、若短期内GitHub博客未成功更新，请通过shift-F5刷新浏览器缓存" class="headerlink" title="3、若短期内GitHub博客未成功更新，请通过shift+F5刷新浏览器缓存"></a>3、若短期内GitHub博客未成功更新，请通过shift+F5刷新浏览器缓存</h2><h2 id="4、完成后就可以考虑对自己的博客进行精装修了（指更换主题）"><a href="#4、完成后就可以考虑对自己的博客进行精装修了（指更换主题）" class="headerlink" title="4、完成后就可以考虑对自己的博客进行精装修了（指更换主题）"></a>4、完成后就可以考虑对自己的博客进行精装修了（指更换主题）</h2><p><img src="https://i.loli.net/2021/09/17/LoIqbAPEOlcztev.jpg" alt="3c1a9546924ac371.jpg"></p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
